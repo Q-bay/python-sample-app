@@ -1,0 +1,8 @@
+version: '3'
+services:
+  python3_modules:
+    working_dir: '/code/'
+    tty: true
+    build: .
+    volumes:
+      - .:/code
