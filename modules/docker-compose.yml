@@ -3,6 +3,16 @@ services:
   python3_modules:
     working_dir: '/code/'
     tty: true
-    build: .
+    build: ./python
     volumes:
       - .:/code
+    depends_on:
+      - dynamodb
+  dynamodb:
+    build: ./dynamodb
+    container_name: dynamodb
+    volumes:
+      - ./dynamodb/data:/home/dynamodblocal/data
+    ports:
+      - 8000:8000
+    command: -jar DynamoDBLocal.jar -dbPath ./data
