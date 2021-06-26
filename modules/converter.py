@@ -1,6 +1,25 @@
 import sys
 import re
 
+def main():
+    print('choose this convert type.' )
+    print('1: convert camel to snake.' )
+    print('2: convert snake to camel.' )
+
+    convert_type = input()
+
+    if convert_type not in ('1', '2'):
+        print('convert type must be 1 or 2 !')
+        exit()
+
+    print('specify charactor string.')
+    charactor = input()
+
+    if convert_type == '1':
+        print(convert_charctor_camel_to_snake(charactor))
+    elif convert_type == '2':
+        print(convert_charctor_snake_to_camel(charactor))
+
 def convert_charctor_camel_to_snake(charactor):
     converted_charactor = ''
 
@@ -28,21 +47,5 @@ def convert_charctor_snake_to_camel(charactor):
 
     return converted_charactor
 
-
-print('choose this convert type.' )
-print('1: convert camel to snake.' )
-print('2: convert snake to camel.' )
-
-convert_type = input()
-
-if convert_type not in ('1', '2'):
-    print('convert type must be 1 or 2 !')
-    exit()
-
-print('specify charactor string.')
-charactor = input()
-
-if convert_type == '1':
-    print(convert_charctor_camel_to_snake(charactor))
-elif convert_type == '2':
-    print(convert_charctor_snake_to_camel(charactor))
+if __name__ == "__main__":
+    main()
