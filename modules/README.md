@@ -11,7 +11,10 @@ python converter.py
 
 ### dynamodb_crud.py
 dynamodbに対して操作するツール
-今後dynamodbの操作をする上で使いまわせるコードなどを入れてある
+今後dynamodbの操作をする上で使いまわせるコードなどを入れる予定
+
+### create_table.py
+テスト用テーブル作成ファイル
 
 # Docker操作について(メモ書き)
 ## コマンド：Dockerイメージのビルドから起動
