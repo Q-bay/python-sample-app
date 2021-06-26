@@ -38,4 +38,4 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 6f986b100678   modules_python3_modules   "python3"                6 days ago     Up About a minute                    modules_python3_modules_1
 
 ## コンテナ停止
-docker stop <container id or container name>
+docker stop \<container id or container name>
