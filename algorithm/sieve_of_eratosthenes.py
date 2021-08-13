@@ -26,9 +26,14 @@ def erastosthenes(number):
     # 平方根にして整数化する、これが検索のMAX
     squrt_limit = int(math.sqrt(number))
 
-    # 2からが素数なので
-    for i in range(2, number, 2):
-        print(i + 1)
+    # 2からが素数なので2と3以上の奇数のリストを作る(2より大きい偶数は素数でないので無視)、
+    # このリストから割れる数字を除いたものが素数
+    list = [2]
+    list += [i + 1 for i in range(2, number, 2)]
+
+    for i in list:
+        print(i)
+        
     
 
 
