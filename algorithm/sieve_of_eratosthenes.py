@@ -42,10 +42,19 @@ def erastosthenes(number):
     # max_limitから素数だけにする
     max_limit_prime_numbers = []
     for max_limit_odd_num1 in max_limit_odd_numbers:
-        for max_limit_odd_num2 in max_limit_odd_numbers:
-            if max_limit_odd_num2 != max_limit_odd_num1 and max_limit_odd_num2 % max_limit_odd_num1 == 0:
-                max_limit_odd_numbers.remove(max_limit_odd_num2)
-        max_limit_prime_numbers.append(max_limit_odd_num1)
+        add_flag = True
+        for max_limit_odd_num2 in max_limit_odd_numbers:  
+
+            if max_limit_odd_num1 <= max_limit_odd_num2:
+                add_flag = True
+                break
+
+            if max_limit_odd_num1 % max_limit_odd_num2 == 0:
+                add_flag = False
+                break
+
+        if add_flag == True:
+                max_limit_prime_numbers.append(max_limit_odd_num1)
 
     print('max_limit_prime_numbers: ' + str(max_limit_prime_numbers))
     
