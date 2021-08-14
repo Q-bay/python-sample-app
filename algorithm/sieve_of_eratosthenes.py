@@ -44,8 +44,14 @@ def erastosthenes(number):
 
     # 限界の数値を倍数していく、numbersに存在したら削除する
     for odd_num in max_limit_odd_numbers:
-        for multiple_num in range (2, number // max_limit_odd_numbers[0]):
-            del_num = odd_num * multiple_num
+        del_num = 0
+        # number // max_limit_odd_numbers[0]で割ることで最大の掛け算する回数が出る
+        for coefficient in range (2, number // max_limit_odd_numbers[0], 1):
+            del_num = odd_num * coefficient
+
+            if del_num > number:
+                break
+            
             if del_num in odd_numbers:
                 odd_numbers.remove(del_num)
             
