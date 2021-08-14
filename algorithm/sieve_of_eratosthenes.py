@@ -33,29 +33,40 @@ def erastosthenes(number):
 
     # 3以上の奇数のリストを作る(2より大きい偶数は素数でないので無視)
     odd_numbers = [i + 1 for i in range(2, number, 2)]
-    print(odd_numbers)
+    print('odd_numbers: ' + str(odd_numbers))
     
     # max_limitまでの奇数のリスト
     max_limit_odd_numbers = [i + 1 for i in range(2, max_limit, 2)]
-    print(max_limit_odd_numbers)
+    print('max_limit_odd_numbers: ' + str(max_limit_odd_numbers))
+    
+    # max_limitから素数だけにする
+    max_limit_prime_numbers = []
+    for max_limit_odd_num1 in max_limit_odd_numbers:
+        for max_limit_odd_num2 in max_limit_odd_numbers:
+            if max_limit_odd_num2 != max_limit_odd_num1 and max_limit_odd_num2 % max_limit_odd_num1 == 0:
+                max_limit_odd_numbers.remove(max_limit_odd_num2)
+        max_limit_prime_numbers.append(max_limit_odd_num1)
+
+    print('max_limit_prime_numbers: ' + str(max_limit_prime_numbers))
     
     # 返却用のリスト(2は素数なので入れておく)
     prime_list = [2]
 
-    # 限界の数値を倍数していく、numbersに存在したら削除する
-    for odd_num in max_limit_odd_numbers:
-        del_num = 0
-        # number // max_limit_odd_numbers[0]で割ることで最大の掛け算する回数が出る
-        for coefficient in range (2, number // max_limit_odd_numbers[0], 1):
-            del_num = odd_num * coefficient
-
-            if del_num > number:
+    for odd_num in odd_numbers:
+        add_flag = True
+        for max_limit_prime in max_limit_prime_numbers:
+            
+            if odd_num <= max_limit_prime:
+                add_flag = True
                 break
-            
-            if del_num in odd_numbers:
-                odd_numbers.remove(del_num)
-            
-    prime_list = prime_list + odd_numbers
+
+            if odd_num % max_limit_prime == 0:
+                add_flag = False
+                break
+
+        if add_flag == True:
+            prime_list.append(odd_num)
+        
 
     print(prime_list)
     print(len(prime_list))
