@@ -1,8 +1,10 @@
 import sys
 import math
+import time
 
 def main():
     print('start!' )
+    start = time.time()
     args = sys.argv
     
     if len(args) == 1:
@@ -14,6 +16,8 @@ def main():
     else:
         print('Please specify a numerical value for the argument.')
 
+    elapsed_time = time.time() - start
+    print ("elapsed_time:{0}".format(elapsed_time) + "[sec]")
     print('end!')
 
 def erastosthenes(number):
