@@ -40,7 +40,6 @@ def erastosthenes(number):
 
     # 限界の数値を倍数していく、numbersに存在したら削除する
     for odd_num in max_limit_odd_numbers:
-        
         for multiple_num in range (2, number // max_limit_odd_numbers[0]):
             del_num = odd_num * multiple_num
             if del_num in odd_numbers:
