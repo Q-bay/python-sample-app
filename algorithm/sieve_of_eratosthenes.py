@@ -40,45 +40,31 @@ def erastosthenes(number):
     print('max_limit_odd_numbers: ' + str(max_limit_odd_numbers))
     
     # max_limitから素数だけにする
-    max_limit_prime_numbers = []
-    for max_limit_odd_num1 in max_limit_odd_numbers:
-        add_flag = True
-        for max_limit_odd_num2 in max_limit_odd_numbers:  
-
-            if max_limit_odd_num1 <= max_limit_odd_num2:
-                add_flag = True
-                break
-
-            if max_limit_odd_num1 % max_limit_odd_num2 == 0:
-                add_flag = False
-                break
-
-        if add_flag == True:
-                max_limit_prime_numbers.append(max_limit_odd_num1)
-
+    max_limit_prime_numbers = make_prime_list(max_limit_odd_numbers, max_limit_odd_numbers)
     print('max_limit_prime_numbers: ' + str(max_limit_prime_numbers))
     
     # 返却用のリスト(2は素数なので入れておく)
-    prime_list = [2]
+    ret_prime_list = [2] + make_prime_list(odd_numbers, max_limit_prime_numbers)
+    print(ret_prime_list)
+    print(len(ret_prime_list))
 
-    for odd_num in odd_numbers:
+def make_prime_list(num_list1, num_list2):
+    prime_list = []
+    for num1 in num_list1:
         add_flag = True
-        for max_limit_prime in max_limit_prime_numbers:
+        for num2 in num_list2:
             
-            if odd_num <= max_limit_prime:
+            if num1 <= num2:
                 add_flag = True
                 break
 
-            if odd_num % max_limit_prime == 0:
+            if num1 % num2 == 0:
                 add_flag = False
                 break
 
         if add_flag == True:
-            prime_list.append(odd_num)
-        
-
-    print(prime_list)
-    print(len(prime_list))
+            prime_list.append(num1)
+    return prime_list
 
 if __name__ == "__main__":
     main()
