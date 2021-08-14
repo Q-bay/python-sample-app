@@ -21,7 +21,7 @@ def main():
     print('end!')
 
 def erastosthenes(number):
-    print(number)
+    print('check number: ' + str(number))
     
     if number == 1:
         print('prime number is nothing.')
@@ -29,24 +29,24 @@ def erastosthenes(number):
 
     # 平方根にして整数化する、これが検索のMAX
     max_limit = int(math.sqrt(number))
-    print('Max: ' + str(max_limit))
+    #print('Max: ' + str(max_limit))
 
     # 3以上の奇数のリストを作る(2より大きい偶数は素数でないので無視)
     odd_numbers = [i + 1 for i in range(2, number, 2)]
-    print('odd_numbers: ' + str(odd_numbers))
+    #print('odd_numbers: ' + str(odd_numbers))
     
     # max_limitまでの奇数のリスト
     max_limit_odd_numbers = [i + 1 for i in range(2, max_limit, 2)]
-    print('max_limit_odd_numbers: ' + str(max_limit_odd_numbers))
+    #print('max_limit_odd_numbers: ' + str(max_limit_odd_numbers))
     
     # max_limitから素数だけにする
     max_limit_prime_numbers = make_prime_list(max_limit_odd_numbers, max_limit_odd_numbers)
-    print('max_limit_prime_numbers: ' + str(max_limit_prime_numbers))
+    #print('max_limit_prime_numbers: ' + str(max_limit_prime_numbers))
     
     # 返却用のリスト(2は素数なので入れておく)
     ret_prime_list = [2] + make_prime_list(odd_numbers, max_limit_prime_numbers)
-    print(ret_prime_list)
-    print(len(ret_prime_list))
+    #print(ret_prime_list)
+    print('prime number quantity is :' + str(len(ret_prime_list)))
 
 def make_prime_list(num_list1, num_list2):
     prime_list = []
