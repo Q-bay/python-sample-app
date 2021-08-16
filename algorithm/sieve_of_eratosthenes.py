@@ -61,9 +61,10 @@ def make_prime_list(num_list1, num_list2):
             if num1 % num2 == 0:
                 add_flag = False
                 break
-
+            
         if add_flag == True:
             prime_list.append(num1)
+            
     return prime_list
 
 if __name__ == "__main__":
