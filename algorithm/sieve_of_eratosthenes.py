@@ -32,11 +32,11 @@ def erastosthenes(number):
     #print('Max: ' + str(max_limit))
 
     # 3以上の奇数のリストを作る(2より大きい偶数は素数でないので無視)
-    odd_numbers = [i + 1 for i in range(2, number, 2)]
+    odd_numbers = [i for i in range(3, number, 2)]
     #print('odd_numbers: ' + str(odd_numbers))
     
     # max_limitまでの奇数のリスト
-    max_limit_odd_numbers = [i + 1 for i in range(2, max_limit, 2)]
+    max_limit_odd_numbers = [i for i in range(3, max_limit, 2)]
     #print('max_limit_odd_numbers: ' + str(max_limit_odd_numbers))
     
     # max_limitから素数だけにする
@@ -64,7 +64,7 @@ def make_prime_list(num_list1, num_list2):
             
         if add_flag == True:
             prime_list.append(num1)
-            
+
     return prime_list
 
 if __name__ == "__main__":
