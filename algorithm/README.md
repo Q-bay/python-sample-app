@@ -10,7 +10,7 @@
 ### コマンド：Dockerイメージのビルドから起動
 docker-compose up -d --build
 
-### 起動&デーモン化
+### 起動&バックエンド起動
 docker-compose up -d
 
 ### コンテナに入る
