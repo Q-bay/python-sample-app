@@ -3,4 +3,4 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     name = models.CharField(max_length=32)
-    desctiption = models.TextField()
+    description = models.TextField()
