@@ -1,5 +1,5 @@
 """
-WSGI config for sso_mod project.
+WSGI config for sso project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sso_mod.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sso.settings')
 
 application = get_wsgi_application()
