@@ -30,3 +30,10 @@ pass:dev
 
 ## postgres接続
 psql -h localhost -p 5432 -U postgres -d postgres
+
+# エンドポイント
+## 管理画面
+http://localhost:8001/admin/
+
+## API
+http://localhost:8001/api/
