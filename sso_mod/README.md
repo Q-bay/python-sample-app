@@ -22,3 +22,11 @@ python manage.py makemigrations
 
 ### migrationファイルを元にDBに反映する
 python manage.py migrate
+
+### admin用ユーザ作成
+python manage.py createsuperuser
+user:dev
+pass:dev
+
+## postgres接続
+psql -h localhost -p 5432 -U postgres -d postgres
