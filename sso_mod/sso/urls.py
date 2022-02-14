@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url, include
-from mod.urls import router as mod_router
+from django.conf.urls import include
+from django.contrib import admin
+from django.contrib.auth import views
+from .views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # blog.urlsをincludeする
-    url(r'^api/', include(mod_router.urls)),
+    path('login/', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('auth/', include('social_django.urls', namespace='social')), 
+    path('', home, name='home'),
 ]
