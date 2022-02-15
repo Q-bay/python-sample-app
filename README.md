@@ -9,3 +9,6 @@ Pythonの環境を作るDockerfile
 
 ## modules
 簡単なツールとか
+
+## sso_mod
+偉大なインターネットのお力をお借りしてGoogleでログイン成功

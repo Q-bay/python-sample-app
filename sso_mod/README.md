@@ -1,6 +1,6 @@
 
 # SSOのサンプルアプリ
-作り中
+Googleログインの簡易版
 
 ## 起動
 docker-compose up -d
