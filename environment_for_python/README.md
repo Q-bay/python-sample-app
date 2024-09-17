@@ -4,7 +4,7 @@ dockerでのpython環境構築用
 ## コマンド：Dockerイメージのビルドから起動
 docker-compose up -d --build
 
-## 起動&デーモン化
+## 起動&バックグラウンド起動
 docker-compose up -d
 
 ## コンテナに入る
