@@ -20,7 +20,7 @@ dynamodbに対して操作するツール
 ## コマンド：Dockerイメージのビルドから起動
 docker-compose up -d --build
 
-## 起動&デーモン化
+## 起動&バックグラウンド起動
 docker-compose up -d
 
 ## コンテナに入る
@@ -33,7 +33,7 @@ docker-compose down
 docker ps -a
 
 下記のように取得できる
-PS C:\work_space_python_toranoko\modules> docker ps -a
+PS C:\modules> docker ps -a
 CONTAINER ID   IMAGE                     COMMAND                  CREATED        STATUS                     PORTS     NAMES
 6f986b100678   modules_python3_modules   "python3"                6 days ago     Up About a minute                    modules_python3_modules_1
 
